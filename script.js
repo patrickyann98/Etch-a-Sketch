@@ -4,17 +4,20 @@ function generateGrid(size) {
   container.innerHTML = "";
 
   const squareSize = 960 / size;
-
+  
   for (let i = 0; i < size * size; i++) {
     const square = document.createElement("div");
-
+    const colorDec1 = Math.random()*255;
+    const colorDec2 = Math.random()*255;
+    const colorDec3 = Math.random()*255;
     square.classList.add("square");
 
     square.style.width = `${squareSize}px`;
     square.style.height = `${squareSize}px`;
 
     square.addEventListener("mouseover", () => {
-      square.style.backgroundColor = "aqua";
+      square.style.backgroundColor =
+  `rgb(${colorDec1}, ${colorDec2}, ${colorDec3})`;
     });
 
     container.append(square);
